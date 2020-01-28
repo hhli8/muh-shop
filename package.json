@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "mock": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "serve:dev": "vue-cli-service serve --mode dev.serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "core-js": "^3.4.4",
+    "cross-env": "^6.0.3",
+    "vant": "^2.4.4",
     "vue": "^2.6.10",
     "vue-muh": "^1.0.21",
     "vue-router": "^3.1.3",

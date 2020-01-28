@@ -1,5 +1,18 @@
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
+  /* devServer: {
+    proxy: {
+      '/touch': {
+        target: 'https://3g.163.com',
+        changeOrigin: true,
+        ws: true,
+        secure: false, // https?
+        pathRewrite: {
+          '^/touch': ''
+        }
+      }
+    }
+  }, */
   css: {
     loaderOptions: {
       postcss: {

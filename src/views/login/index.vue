@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>this is classify</p>
+    login
   </div>
 </template>
 
