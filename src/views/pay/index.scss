@@ -1,0 +1,73 @@
+.pay-page {
+    padding-bottom: 88px;
+    .pay-cash {
+        background: #fff;
+        text-align: center;
+        padding: 30px;
+        &-text {
+           color: #999;
+           font-size: 26px;
+           margin-bottom: 14px;
+        }
+        &-price {
+            color: #000;
+            font-size: 66px;
+        }
+    }
+    .way-title {
+        padding-left: 26px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 24px;
+        color: #666;
+    }
+    .ways {
+        background: #fff;
+        padding-left: 26px;
+        &-item {
+            height: 90px;
+            font-size: 28px;
+            color: #000;
+            line-height: 28px;
+        }
+        .iconfont {
+            font-size: 48px;
+            margin-right: 18px;
+        }
+        .weixin {
+            color: #00BF30;
+        }
+        .zhifub {
+            color: #06AAF0;
+        }
+    }
+    .warn-text {
+        font-size: 24px;
+        margin-top: 20px;
+        padding-left: 30px;
+        color: #939393;
+    }
+    .bottom {
+        height: 88px;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+        justify-content: flex-end;
+        padding-right: 30px;
+        box-sizing: border-box;
+        button {
+            box-sizing: border-box;
+            height: 54px;
+            font-size: 28px;
+            border-radius: 8px;
+            padding: 0 20px;
+            background: linear-gradient(141deg, #606060, #363636);
+            color: #fff;
+        }
+        .list-btn {
+            margin-left: 20px;
+        }
+    }
+}

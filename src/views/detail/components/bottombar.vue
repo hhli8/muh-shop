@@ -1,21 +1,41 @@
 <template>
   <div class="bar flex">
-    <div class="bar-buy-car">
-      <span class="icon icon-shopping"></span>
+    <div class="bar-buy-car" @click="buycar">
+      <span class="icon icon-shopping"><i v-show="count>0">{{count>99?'...':count}}</i></span>
       <div>购物车</div>
     </div>
     <div class="bar-right flex">
       <div class="r-addcar" @click="addCar">加入购物车</div>
-      <div class="r-buy">立即购买</div>
+      <div class="r-buy" @click="buy">立即购买</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    count: {
+      type: Number,
+      default: 0
+    }
+  },
   methods: {
     addCar () {
-      this.$emit('toggleSkushow', true)
+      this.$emit('toggleSkushow', {
+        show: true,
+        type: 'add'
+      })
+    },
+    buy () {
+      this.$emit('toggleSkushow', {
+        show: true,
+        type: 'buy'
+      })
+    },
+    buycar () {
+      this.$router.push({
+        name: 'Shopcar'
+      })
     }
   }
 }
@@ -45,6 +65,22 @@ export default {
       background: url('~@/assets/img/icon-shoppingcar.png') no-repeat center;
       background-size: 100% 100%;
       margin-bottom: 6px;
+      position: relative;
+      i {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #ed145b;
+        color: #fff;
+        font-style: normal;
+        text-align: center;
+        line-height: 30px;
+        right: -20px;
+        top: -8px;
+        font-size: 20px;
+      }
     }
   }
   .bar-right {

@@ -22,7 +22,10 @@ const routes = [
   {
     path: '/detail/:id/:source',
     name: 'Detail',
-    component: resolve => { require(['@/views/detail'], resolve) }
+    component: resolve => { require(['@/views/detail'], resolve) },
+    meta: {
+      title: '商品详情'
+    }
   },
   {
     path: '/shopcar',
@@ -37,17 +40,26 @@ const routes = [
   {
     path: '/createorder',
     name: 'CreateOrder',
-    component: resolve => { require(['@/views/order/create.vue'], resolve) }
+    component: resolve => { require(['@/views/order/create.vue'], resolve) },
+    meta: {
+      title: '确认订单'
+    }
   },
   {
     path: '/orderlist',
     name: 'OrderList',
-    component: resolve => { require(['@/views/order/list.vue'], resolve) }
+    component: resolve => { require(['@/views/order/list.vue'], resolve) },
+    meta: {
+      title: '我的订单'
+    }
   },
   {
     path: '/pay',
     name: 'Pay',
-    component: resolve => { require(['@/views/pay'], resolve) }
+    component: resolve => { require(['@/views/pay'], resolve) },
+    meta: {
+      title: '收银台'
+    }
   },
   // adress
   {

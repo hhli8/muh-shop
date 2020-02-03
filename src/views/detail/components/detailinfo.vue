@@ -57,11 +57,16 @@ export default {
 <style lang="scss">
 .pic-gallery-wrapper {
   .van-swipe {
-    height: 100%;
+    /*height: 100%;*/
+    .img-box {
+      img {
+        vertical-align: bottom;
+      }
+    }
   }
   .van-swipe__track {
-    display: flex;
-    height: 100%;
+    /*display: flex;*/
+    /*height: 100%;*/
   }
 }
 </style>
