@@ -7,7 +7,10 @@ const routes = [
   {
     path: '/',
     name: 'Default',
-    component: resolve => { require(['@/views/default'], resolve) }
+    component: resolve => { require(['@/views/default'], resolve) },
+    meta: {
+      title: '商城'
+    }
   },
   {
     path: '/mine',
@@ -72,6 +75,7 @@ const routes = [
     name: 'AddAdress',
     component: resolve => { require(['@/views/adress/add.vue'], resolve) }
   },
+  // 授信过程
   {
     path: '/credit',
     name: 'Credit',

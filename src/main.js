@@ -12,7 +12,12 @@ import mixinBase from '@/mixins/base'
 
 Vue.config.productionTip = false
 
-Vue.use(Axios).use(Swipe).use(SwipeItem).use(Toast).use(MSku).use(MPopup)
+Vue.use(Axios)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Toast)
+Vue.use(MSku)
+  .use(MPopup)
 
 Vue.mixin(mixinBase)
 
