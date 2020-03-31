@@ -71,6 +71,11 @@ const routes = [
     path: '/addadress',
     name: 'AddAdress',
     component: resolve => { require(['@/views/adress/add.vue'], resolve) }
+  },
+  {
+    path: '/credit',
+    name: 'Credit',
+    component: resolve => { require(['@/views/credit'], resolve) }
   }
 ]
 
