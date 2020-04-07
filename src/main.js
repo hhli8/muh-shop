@@ -32,4 +32,13 @@ new Vue({
   router,
   store,
   render: h => h(App)
+  /* mounted () {
+    document.dispatchEvent(new Event('render-event'))
+  } */
 }).$mount('#app')
+
+/*
+ *
+ * "prerender-spa-plugin": "^3.4.0",
+    "puppeteer": "^2.1.1", ----预渲染
+ */

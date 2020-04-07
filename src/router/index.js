@@ -82,10 +82,9 @@ const routes = [
     component: resolve => { require(['@/views/credit'], resolve) }
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.VUE_APP_BASE_URL,
   routes
 })
 

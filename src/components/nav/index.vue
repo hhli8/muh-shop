@@ -1,5 +1,6 @@
 <template>
   <div class="tabBar-wrap">
+    <slot></slot>
     <nav>
       <div v-for="(item, i) in nav" :key="i" class="item" :class="i===index?'act':''" @click="jump(item, i)">
         <span class="iconfont" v-html="item.icon"></span>
@@ -46,12 +47,12 @@ export default {
   bottom: 0;
   background: #fff;
   z-index: 2000;
-  box-shadow: 0 8px 15px 10px rgba(0, 0, 0, 0.06);
 }
 nav {
   display: flex;
   justify-content: space-around;
   height: 80px;
+  box-shadow: 0 8px 15px 10px rgba(0, 0, 0, 0.06);
   .item {
     flex: 1;
     text-align: center;
