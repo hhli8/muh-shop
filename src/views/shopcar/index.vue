@@ -101,7 +101,7 @@ export default {
           }
         })
       })
-      if (totalTag === this.totalCount) this.isAllSelected = true
+      this.isAllSelected = totalTag === this.totalCount
       this.totalPrice = NP.strip(this.totalPrice)
     }
   }
