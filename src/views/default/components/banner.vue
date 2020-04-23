@@ -12,14 +12,19 @@
 export default {
   data () {
     return {
-      banners: [
+      banners: []
+    }
+  },
+  created () {
+    setTimeout(() => {
+      this.banners = [
         { url: 'https://img.yzcdn.cn/upload_files/2020/03/06/Fjo43b1oFhT0wNie_VwbR1cmByU7.jpg!large.jpg', id: '1' },
         { url: 'https://img.yzcdn.cn/upload_files/2020/03/06/Fjo43b1oFhT0wNie_VwbR1cmByU7.jpg!large.jpg', id: '2' },
         { url: 'https://img.yzcdn.cn/upload_files/2020/03/06/Fjo43b1oFhT0wNie_VwbR1cmByU7.jpg!large.jpg', id: '3' },
         { url: 'https://img.yzcdn.cn/upload_files/2020/03/06/Fjo43b1oFhT0wNie_VwbR1cmByU7.jpg!large.jpg', id: '4' },
         { url: 'https://img.yzcdn.cn/upload_files/2020/03/06/Fjo43b1oFhT0wNie_VwbR1cmByU7.jpg!large.jpg', id: '5' }
       ]
-    }
+    }, 1000)
   }
 }
 </script>

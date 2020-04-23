@@ -76,6 +76,9 @@ export default {
           return value
         }
       } */
+    },
+    back () {
+      this.$router.back()
     }
   }
 }

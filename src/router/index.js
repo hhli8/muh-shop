@@ -13,6 +13,11 @@ const routes = [
     }
   },
   {
+    path: '/test',
+    name: 'Test',
+    component: resolve => { require(['@/views/default/test.vue'], resolve) }
+  },
+  {
     path: '/mine',
     name: 'Mine',
     component: resolve => { require(['@/views/mine'], resolve) }

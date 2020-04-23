@@ -1,3 +1,4 @@
+// import './public-path.js'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -7,7 +8,10 @@ import '@/assets/base.scss'
 import '@/assets/common.scss'
 import { Swipe, SwipeItem, Toast } from 'vant'
 import 'vant/lib/index.css'
-import { MPopup, MSku } from 'vue-muh'
+// import { MPopup, MSku, MClassify } from 'vue-muh'
+import MPopup from 'vue-muh/lib/popup'
+import MSku from 'vue-muh/lib/sku'
+import MClassify from 'vue-muh/lib/classify'
 import mixinBase from '@/mixins/base'
 
 Vue.config.productionTip = false
@@ -18,6 +22,7 @@ Vue.use(Axios)
   .use(Toast)
 Vue.use(MSku)
   .use(MPopup)
+  .use(MClassify)
 
 Vue.mixin(mixinBase)
 
@@ -31,10 +36,10 @@ router.beforeEach((to, from, next) => {
 new Vue({
   router,
   store,
-  render: h => h(App)
-  /* mounted () {
+  render: h => h(App),
+  mounted () {
     document.dispatchEvent(new Event('render-event'))
-  } */
+  }
 }).$mount('#app')
 
 /*

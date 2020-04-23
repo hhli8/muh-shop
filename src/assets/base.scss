@@ -4,18 +4,8 @@ html, body {
 //height:100%;
 //box-sizing:border-box;
 //font-weight:400;
-//font-family: PingFang, "microsoft yahei",miui, sans-serif;
 }
 body {
-    @font-face {
-      font-family: 'iconfont';  /* project id 1227212 */
-      src: url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.eot');
-      src: url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.eot?#iefix') format('embedded-opentype'),
-      url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.woff2') format('woff2'),
-      url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.woff') format('woff'),
-      url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.ttf') format('truetype'),
-      url('//at.alicdn.com/t/font_1227212_zqljrgbuysh.svg#iconfont') format('svg');
-    }
 //-webkit-text-size-adjust: 100% !important;  
 //text-size-adjust: 100% !important;  
 //-moz-text-size-adjust: 100% !important;  
@@ -104,9 +94,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-//font-size: 100%;
-//font: inherit;
-//vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
