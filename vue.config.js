@@ -1,6 +1,6 @@
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
+/* const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
-const path = require('path')
+const path = require('path') */
 const env = process.env
 module.exports = {
 	productionSourceMap: false, // map文件的作用在于：项目打包后，代码都是经过压缩加密的，如果运行时报错，输出的错误信息无法准确得知是哪里的代码报错。

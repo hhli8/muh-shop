@@ -36,10 +36,10 @@ router.beforeEach((to, from, next) => {
 new Vue({
   router,
   store,
-  render: h => h(App),
-  mounted () {
+  render: h => h(App)
+  /* mounted () {
     document.dispatchEvent(new Event('render-event'))
-  }
+  } */
 }).$mount('#app')
 
 /*
