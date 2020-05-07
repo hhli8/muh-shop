@@ -3,6 +3,7 @@
     <div class="container">
       <!--this is home-->
       <banner></banner>
+      <!--<button @click="submit">提交</button>-->
       <!--<div>专区</div>-->
       <!--<div>新人</div>-->
       <!--<div>类目热销</div>-->
@@ -35,12 +36,26 @@ export default {
       recommends: []
     }
   },
+  computed: {
+    //
+  },
   created () {
     // console.log(process.env.VUE_APP_API_BASEURL)
     // console.log(this.$api)
-    setTimeout(() => {
-      this.recommends = [1, 2, 2, 2, 2, 2, 2, 2, 2]
-    }, 0)
+    this.recommends = [1, 2, 2, 2, 2, 2, 2, 2, 2]
+    // console.log(this.$api, this.$api['login/loginName'])
+    //
+    /* ajax.get('http://172.32.30.167:3001/alipay/sign', {}, (res) => {
+      console.log(res)
+    }) */
+  },
+  methods: {
+    submit () {
+      this.$api['alipay/getSign']({ x: 99, token: 123123 }).then((res) => {
+        console.log(res)
+        location.href = res.result
+      })
+    }
   }
 }
 </script>
