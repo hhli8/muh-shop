@@ -12,6 +12,7 @@ import '@/assets/common.scss'
 import MPopup from 'vue-muh/lib/popup'
 import MSku from 'vue-muh/lib/sku'
 import MClassify from 'vue-muh/lib/classify'
+import MDialog from 'vue-muh/lib/dialog'
 import mixinBase from '@/mixins/base'
 
 Vue.config.productionTip = false
@@ -24,6 +25,7 @@ Vue.use(Axios)
 Vue.use(MSku)
   .use(MPopup)
   .use(MClassify)
+  .use(MDialog)
 
 Vue.mixin(mixinBase)
 

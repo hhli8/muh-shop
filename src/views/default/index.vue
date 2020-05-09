@@ -17,7 +17,7 @@
           <div><router-link :to="{name: 'Detail', params: {id: 2222, source: 'wy'}, query: {x: 99} }">商品2</router-link></div>
         </div>-->
         <div>
-          <div v-show="!finish" class="van-list__loading"><div class="van-loading van-loading--circular van-loading van-list__loading-icon" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div><span class="van-list__loading-text">加载中...</span></div>
+          <div v-show="!finish" class="van-list__loading"><div class="van-loading van-loading--circular van-loading van-list__loading-icon" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div><span class="van-list__loading-text">加载中</span></div>
           <div v-show="finish" class="van-list__finished-text">没有更多了</div>
         </div>
       </van-pull-refresh>
