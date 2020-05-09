@@ -5,9 +5,9 @@ import router from './router'
 import store from './store'
 import Axios from './axios'
 import '@/assets/base.scss'
-import '@/assets/common.scss'
-import { Swipe, SwipeItem, Toast } from 'vant'
+import { Swipe, SwipeItem, Toast, PullRefresh } from 'vant'
 import 'vant/lib/index.css'
+import '@/assets/common.scss'
 // import { MPopup, MSku, MClassify } from 'vue-muh'
 import MPopup from 'vue-muh/lib/popup'
 import MSku from 'vue-muh/lib/sku'
@@ -20,6 +20,7 @@ Vue.use(Axios)
   .use(Swipe)
   .use(SwipeItem)
   .use(Toast)
+  .use(PullRefresh)
 Vue.use(MSku)
   .use(MPopup)
   .use(MClassify)

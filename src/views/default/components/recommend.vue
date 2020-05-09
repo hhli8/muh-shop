@@ -3,7 +3,7 @@
     <div v-for="(item, index) in list" :key="index" class="item flex" @click="goodDetail(item, index)">
       <div class="item-img"><img src="https://img.yzcdn.cn/upload_files/2020/03/30/Fl58QeuRKhMSjhGlxt-08YveU1nY.jpg!large.jpg" alt="" /></div>
       <div class="item-right">
-        <p class="good-title text-line2">正版现货【 曾国藩家书 冰鉴 挺经 全3册 】曾国藩经典文集 曾文正公家训相人术文言文原版译注白话文译文书籍 中华名人传记书局人物传记</p>
+        <p class="good-title text-line2">{{item}}正版现货【 曾国藩家书 冰鉴 挺经 全3册 】曾国藩经典文集 曾文正公家训相人术文言文原版译注白话文译文书籍 中华名人传记书局人物传记</p>
         <div class="good-tag">
           <span v-for="(tag, tagindex) in tags" :key="tagindex">{{tag}}</span>
         </div>

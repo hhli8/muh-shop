@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import admin from './admin'
 
 Vue.use(VueRouter)
 
@@ -9,18 +10,23 @@ const routes = [
     name: 'Default',
     component: resolve => { require(['@/views/default'], resolve) },
     meta: {
-      title: '商城'
+      title: '商城',
+      keepAlive: true,
+      xy: { x: 0, y: 0 }
     }
   },
   {
-    path: '/test',
+    path: '/test', // 测试专用
     name: 'Test',
     component: resolve => { require(['@/views/default/test.vue'], resolve) }
   },
   {
     path: '/mine',
     name: 'Mine',
-    component: resolve => { require(['@/views/mine'], resolve) }
+    component: resolve => { require(['@/views/mine'], resolve) },
+    meta: {
+      title: '我的'
+    }
   },
   {
     path: '/classify',
@@ -85,11 +91,22 @@ const routes = [
     path: '/credit',
     name: 'Credit',
     component: resolve => { require(['@/views/credit'], resolve) }
-  }
+  },
+  ...admin
 ]
 const router = new VueRouter({
   mode: 'history',
   base: process.env.VUE_APP_BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+    // 仅浏览器返回时有用 且父元素不得有overflow
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.meta.xy) {
+      return to.meta.xy
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes
 })
 

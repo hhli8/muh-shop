@@ -48,3 +48,16 @@
 .van-toast {
   font-size: 26px !important;
 }
+.van-pull-refresh__head {
+    font-size: 26px;
+    .van-loading__text {
+        font-size: 26px;
+    }
+    .van-loading__spinner {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+.van-list__finished-text, .van-list__loading-text {
+    font-size: 26px;
+}

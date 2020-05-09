@@ -149,12 +149,23 @@ export default {
   padding: 0.32rem;
   box-sizing: border-box;
 }
+.page-detail /deep/ .muh-sku-good .good-img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
 .page-detail /deep/ .muh-sku-good .good-info .price {
   color: #ed145b;
+  font-size: 0.4rem;
 }
 .page-detail /deep/ .muh-sku-good .good-info .txt {
   font-size: 0.346666rem;
   margin-top: 0.213333rem;
+}
+.page-detail /deep/ .muh-sku-list .name {
+  font-size: 0.346666rem;
+}
+.page-detail /deep/ .muh-sku-list .sitem {
+  font-size: 0.373333rem;
 }
 .page-detail /deep/ .count-box {
   border-top: 0.013333rem solid #2c3e50;

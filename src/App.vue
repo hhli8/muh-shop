@@ -15,7 +15,7 @@
   color: #2c3e50;
   font-size: 30px;
   height: 100vh;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 #app::-webkit-scrollbar {
   display: none;

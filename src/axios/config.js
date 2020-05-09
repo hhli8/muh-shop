@@ -7,7 +7,17 @@ export function requestFailFunc (error) {
   return Promise.reject(error)
 }
 export function responseSuccessFunc (res) {
-  return res.data
+  let result = res.data
+  if (result) {
+    let code = result.code
+    if (code === 200) {
+      return result.data
+    } else {
+      return {}
+    }
+  } else {
+    return {}
+  }
 }
 export function responseFailFunc (error) {
   return Promise.reject(error)
