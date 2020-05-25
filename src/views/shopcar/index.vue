@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="page-shopcar">
+  <div class="page-shopcar flex">
+    <div class="page-shopcar-scroll">
       <!--<p>this is shopcar</p>-->
       <div class="item" v-for="(item, index) in lists" :key="index">
         <!--<div class="item-shop"><span class="iconfont">&#xe621;</span><span>{{item.shopname}}</span></div>-->
@@ -23,7 +23,7 @@
       <div class="clearing">
         <span class="icon-select" :class="isAllSelected?'act':''" @click="selectAll"></span>
         <div class="clear">
-          <span class="font-tag">不含运费</span><span class="total-text">合计：</span><span class="total-cash">¥{{totalPrice}}</span><span class="btn">结算<i v-show="totalCount">({{totalCount}})</i></span>
+          <span class="font-tag">不含运费</span><span class="total-text">合计：</span><span class="total-cash">¥{{totalPrice}}</span><span class="btn" @click="onCalculate">结算<i v-show="totalCount">({{totalCount}})</i></span>
         </div>
       </div>
     </btm-nav>
@@ -103,6 +103,22 @@ export default {
       })
       this.isAllSelected = totalTag === this.totalCount
       this.totalPrice = NP.strip(this.totalPrice)
+    },
+    onCalculate () {
+      if (!this.totalCount) {
+        this.$toast('请先选择商品')
+        return
+      }
+      this.lists.forEach((item, index) => {
+        item.goods.forEach((good, gindex) => {
+          if (good.selected) {
+            // console.log(good.price, good.count)
+          }
+        })
+      })
+      this.$router.push({
+        name: 'CreateOrder'
+      })
     }
   }
 }
@@ -110,62 +126,74 @@ export default {
 
 <style lang="scss" scoped="scoped">
 .page-shopcar {
-  padding: 20px 18px 168px 18px;
-    .item {
-      background: #fff;
-      margin-bottom: 20px;
-      border-radius: 20px;
-      padding: 20px 15px 20px 15px;
-      &-shop {
-        height: 60px;
-        margin-bottom: 10px;
+  flex-direction: column;
+  height: 100vh;
+  &-scroll {
+    flex: 1;
+    overflow: scroll;
+    padding: 20px 18px 0 18px;
+    box-sizing: border-box;
+  }
+  .tabBar-wrap {
+    position: static;
+  }
+}
+.page-shopcar {
+  .item {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px 15px 20px 15px;
+    &-shop {
+      height: 60px;
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      .iconfont {
+        color: #ED145B;
         font-size: 28px;
-        color: #666;
-        display: flex;
-        align-items: center;
-        .iconfont {
-          color: #ED145B;
-          font-size: 28px;
-          margin-right: 15px;
-        }
-      }
-      .good {
-        display: flex;
-        margin-bottom: 26px;
-        &-left {
-          display: flex;
-          /*align-items: center;*/
-          margin-right: 12px;
-          .icon-select {
-            margin-right: 12px;
-            margin-top: 59px;
-          }
-          img {
-            width: 150px;
-            height: 150px;
-          }
-        }
-        &-right {
-          flex: 1;
-          .title {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 26px;
-            line-height: 36px;
-          }
-          .params {
-            font-size: 22px;
-            color: #999;
-            height: 30px;
-            line-height: 30px;
-            margin-bottom: 30px;
-          }
-        }
-      }
-      .good:last-child {
-        margin-bottom: 0;
+        margin-right: 15px;
       }
     }
+    .good {
+      display: flex;
+      margin-bottom: 26px;
+      &-left {
+        display: flex;
+        /*align-items: center;*/
+        margin-right: 12px;
+        .icon-select {
+          margin-right: 12px;
+          margin-top: 59px;
+        }
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+      &-right {
+        flex: 1;
+        .title {
+          color: #333;
+          margin-bottom: 10px;
+          font-size: 26px;
+          line-height: 36px;
+        }
+        .params {
+          font-size: 22px;
+          color: #999;
+          height: 30px;
+          line-height: 30px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .good:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 .clearing {
   height: 88px;

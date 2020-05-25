@@ -76,7 +76,7 @@ export default {
   background: #ED145B;
   .muh-classify {
     background: #fff;
-    border-radius: 30px 30px 0 0;
+    border-radius: 0.4rem 0.4rem 0 0;
   }
   .head {
     padding: 15px 30px;
@@ -132,5 +132,15 @@ export default {
       }
     }
   }
+}
+</style>
+<style scoped="scoped">
+.page-classify /deep/ .muh-classify .nav {
+  width: 2.4rem;
+}
+.page-classify /deep/ .muh-classify .nav-obj {
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  font-size: 0.373333rem;
 }
 </style>

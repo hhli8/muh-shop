@@ -10,16 +10,16 @@
     </div>
     <div class="way-title">选择支付方式</div>
     <div class="ways">
-      <div class="ways-item flex align-items-center" @click="show('')"><span class="iconfont zhifub">&#xe68a;</span><div>支付宝扫码支付</div></div>
-      <div class="ways-item flex align-items-center" @click="show('weixin')"><span class="iconfont weixin">&#xe665;</span><div>微信扫码支付</div></div>
-      <div class="ways-item flex align-items-center" @click="auth"><span class="iconfont zhifub">&#xe68a;</span><div>支付宝授权支付</div></div>
-      <div class="ways-item flex align-items-center" @click="auth"><span class="iconfont weixin">&#xe665;</span><div>微信授权支付</div></div>
+      <!--<div class="ways-item flex align-items-center" @click="show('')"><span class="iconfont zhifub">&#xe68a;</span><div>支付宝扫码支付</div></div>-->
+      <!--<div class="ways-item flex align-items-center" @click="show('weixin')"><span class="iconfont weixin">&#xe665;</span><div>微信扫码支付</div></div>-->
+      <div class="ways-item flex align-items-center" @click="alipay"><span class="iconfont zhifub">&#xe68a;</span><div>支付宝支付</div></div>
+      <!--<div class="ways-item flex align-items-center" @click="auth"><span class="iconfont weixin">&#xe665;</span><div>微信授权支付</div></div>-->
     </div>
-    <div class="warn-text">支付完成后截图发给微信账号:lihaihong8877(唯一人工客服)</div>
+    <!--<div class="warn-text">支付完成后截图发给微信账号:lihaihong8877(唯一人工客服)</div>
     <div class="bottom flex align-items-center">
       <button @click="backhome">返回首页</button>
       <button class="list-btn" @click="orderlist">订单列表</button>
-    </div>
+    </div>-->
     <muh-popup v-model="showpopup">
       <div>
         <img v-if="paytype === 'weixin'" src="~@/assets/img/pay-type-weixin.jpg" alt="" />
@@ -43,7 +43,7 @@ export default {
       this.showpopup = true
     },
     auth () {
-      this.$toast('暂不支持')
+      // this.$toast('暂不支持')
     },
     backhome () {
       this.$router.push({
@@ -53,6 +53,12 @@ export default {
     orderlist () {
       this.$router.push({
         name: 'OrderList'
+      })
+    },
+    alipay () {
+      this.$api['alipay/getSign']({ x: 99, token: 123123 }).then((res) => {
+        console.log(res)
+        location.href = res.url
       })
     }
   }

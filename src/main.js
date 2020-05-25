@@ -13,6 +13,8 @@ import MPopup from 'vue-muh/lib/popup'
 import MSku from 'vue-muh/lib/sku'
 import MClassify from 'vue-muh/lib/classify'
 import MDialog from 'vue-muh/lib/dialog'
+import MButton from 'vue-muh/lib/button'
+import MJDPicker from 'vue-muh/lib/jdpicker'
 import mixinBase from '@/mixins/base'
 
 Vue.config.productionTip = false
@@ -26,6 +28,8 @@ Vue.use(MSku)
   .use(MPopup)
   .use(MClassify)
   .use(MDialog)
+  .use(MButton)
+  .use(MJDPicker)
 
 Vue.mixin(mixinBase)
 

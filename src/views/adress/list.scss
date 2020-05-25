@@ -1,0 +1,72 @@
+.page-adr-list {
+    flex-direction: column;
+    height: 100vh;
+    .content {
+        flex: 1;
+        overflow: scroll;
+        .item {
+            background: #fff;
+            margin-bottom: 20px;
+            .adr-detail {
+                height: 130px;
+                padding: 0 30px;
+                border-bottom: 1px solid #e5e5e5;
+                position: relative;
+                .name-phone {
+                    color: #333;
+                    font-size: 28px;
+                    line-height: 40px;
+                    padding-top: 22px;
+                    .adr-name {
+                        margin-right: 40px;
+                    }
+                }
+                .adr-val {
+                    color: #939393;
+                    font-size: 24px;
+                    margin-top: 12px;
+                    line-height: 34px;
+                }
+                .icon-modify {
+                    position: absolute;
+                    right: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 28px;
+                }
+            }
+            .adr-operate {
+                height: 80px;
+                padding: 0 30px;
+                .text {
+                    font-size: 28px;
+                    color: #636363;
+                    margin-left: 20px;
+                }
+                .icon-delete {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .add-btn {
+        height: 84px;
+        line-height: 84px;
+        background: #ED145B;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+    }
+}
+.icon-select {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  box-sizing: border-box;
+  background: url('~@/assets/img/icon-unselected.png') no-repeat center;
+  background-size: 100% 100%;
+}
+.icon-select.act {
+  background: url('~@/assets/img/icon-selected.png') no-repeat center;
+  background-size: 100% 100%;
+}

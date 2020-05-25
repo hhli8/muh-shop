@@ -1,0 +1,62 @@
+.page-add-adr {
+    .warn {
+        height: 70px;
+        line-height: 70px;
+        background: #FFF5D9;
+        color: #C8732C;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form {
+        background: #fff;
+        .item {
+            height: 88px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0 30px;
+            .name {
+                width: 180px;
+                font-size: 28px;
+                line-height: 40px;
+            }
+            .item-rt {
+                flex: 1;
+                font-size: 30px;
+                input {
+                    width: 100%;
+                    line-height: 46px;
+                }
+                textarea {
+                    display: block;
+                    border: none;
+                    outline: none;
+                    padding: 0;
+                    resize: none;
+                    height: 96px;
+                    line-height: 32px;
+                }
+            }
+        }
+        .item.textarea {
+            height: 140px;
+        }
+        .item:last-child {
+            border-bottom: 1px solid transparent;
+        }
+    }
+    .saveadr {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        background: #fff;
+        height: 98px;
+        line-height: 98px;
+        color: #ED145B;
+        font-size: 32px;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+}
+

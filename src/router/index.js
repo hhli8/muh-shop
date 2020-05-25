@@ -68,9 +68,25 @@ const routes = [
     }
   },
   {
+    path: '/orderdetail',
+    name: 'OrderDetail',
+    component: resolve => { require(['@/views/order/detail.vue'], resolve) },
+    meta: {
+      title: '订单详情'
+    }
+  },
+  {
     path: '/pay',
     name: 'Pay',
     component: resolve => { require(['@/views/pay'], resolve) },
+    meta: {
+      title: '收银台'
+    }
+  },
+  {
+    path: '/payresult',
+    name: 'PayResult',
+    component: resolve => { require(['@/views/pay/result'], resolve) },
     meta: {
       title: '收银台'
     }
@@ -79,12 +95,18 @@ const routes = [
   {
     path: '/adresslist',
     name: 'AdressList',
-    component: resolve => { require(['@/views/adress/list.vue'], resolve) }
+    component: resolve => { require(['@/views/adress/list.vue'], resolve) },
+    meta: {
+      title: '收货地址管理'
+    }
   },
   {
     path: '/addadress',
     name: 'AddAdress',
-    component: resolve => { require(['@/views/adress/add.vue'], resolve) }
+    component: resolve => { require(['@/views/adress/add.vue'], resolve) },
+    meta: {
+      title: '添加地址'
+    }
   },
   // 授信过程
   {

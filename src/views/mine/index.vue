@@ -23,7 +23,7 @@
                 <span class="title-name">我的订单</span><span class="seeall">查看全部</span>
               </div>-->
               <div class="lists flex">
-                <div class="item" v-for="(item,index) in order" :key="index">
+                <div class="item" v-for="(item,index) in order" :key="index" @click="jumpOrder(item)">
                   <div class="item-tap">
                     <span class="iconfont" v-html="item.icon"></span>
                     <div class="name">{{item.name}}</div>
@@ -36,7 +36,7 @@
       </div>
       <div class="my-manage">
         <div class="content">
-          <div class="item" v-for="(item,index) in manage" :key="index">
+          <div class="item" v-for="(item,index) in manage" :key="index" @click="jumpUrl(item)">
             {{item.name}}
           </div>
         </div>
@@ -57,18 +57,26 @@ export default {
       isLogin: false,
       order: [
         // { name: '全部', icon: '&#xe60b;' },
-        { name: '待付款', icon: '&#xe60b;' },
-        { name: '待发货', icon: '&#xe615;' },
-        { name: '待收货', icon: '&#xe605;' },
-        { name: '待评价', icon: '&#xe60c;' }
+        { name: '待付款', icon: '&#xe60b;', type: 'b100' },
+        { name: '待发货', icon: '&#xe615;', type: 'b101' },
+        { name: '待收货', icon: '&#xe605;', type: 'b102' },
+        { name: '待评价', icon: '&#xe60c;', type: 'b103' }
       ],
       manage: [
-        { name: '地址管理', icon: '&#xe60b;' },
-        { name: '我的收藏', icon: '&#xe60b;' },
-        { name: '我的活动', icon: '&#xe60b;' },
-        { name: '地址管理', icon: '&#xe60b;' },
-        { name: '地址管理', icon: '&#xe60b;' }
+        { name: '地址管理', icon: '&#xe60b;', page: 'AdressList' }
       ]
+    }
+  },
+  methods: {
+    jumpUrl (item) {
+      this.$router.push({
+        name: item.page
+      })
+    },
+    jumpOrder (item) {
+      this.$router.push({
+        name: 'OrderList'
+      })
     }
   }
 }

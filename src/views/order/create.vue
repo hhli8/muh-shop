@@ -1,22 +1,24 @@
 <template>
   <div class="create-order-page">
     <div class="receiver">
-      <div class="receiver-box flex adr align-items-center" v-if="defaultAdress" @click="selectAdress">
-        <div class="receiver-adress" style="flex:1;">
-          <div class="receiver-adress-b"><span class="name">{{defaultAdress.name}}</span><span class="phone">{{defaultAdress.phone}}</span></div>
-          <div class="receiver-adress-p flex align-items-center">
-            <span class="iconfont icon-adress">&#xe682;</span>
-            <div class="adress">
-              <div class="adress-value">{{defaultAdress.province + defaultAdress.city + defaultAdress.detail}}</div>
+      <div v-show="loadover">
+        <div class="receiver-box flex adr align-items-center" v-if="defaultAdress" @click="selectAdress">
+          <div class="receiver-adress" style="flex:1;">
+            <div class="receiver-adress-b"><span class="name">{{defaultAdress.name}}</span><span class="phone">{{defaultAdress.phone}}</span></div>
+            <div class="receiver-adress-p flex align-items-center">
+              <span class="iconfont icon-adress">&#xe682;</span>
+              <div class="adress">
+                <div class="adress-value">{{defaultAdress.province + defaultAdress.city + defaultAdress.detail}}</div>
+              </div>
             </div>
           </div>
+          <span class="iconfont icon-right">&#xe604;</span>
         </div>
-        <span class="iconfont icon-right">&#xe604;</span>
-      </div>
-      <div class="receiver-box flex n-adr align-items-center" v-else @click="addAdress">
-        <span class="iconfont icon-adress">&#xe682;</span>
-        <div style="flex:1;">请先填写收货人信息</div>
-        <span class="iconfont icon-right">&#xe604;</span>
+        <div class="receiver-box flex n-adr align-items-center" v-else @click="addAdress">
+          <span class="iconfont icon-adress">&#xe682;</span>
+          <div style="flex:1;">请先填写收货人信息</div>
+          <span class="iconfont icon-right">&#xe604;</span>
+        </div>
       </div>
     </div>
     <!---->
@@ -71,6 +73,7 @@ export default {
   data () {
     return {
       defaultAdress: '',
+      loadover: false,
       goodInfo: '',
       selectGood: ''
     }
@@ -99,11 +102,14 @@ export default {
         price: this.selectGood.good.curprice,
         discount: []
       }
+      this.loadover = true
     }, 60)
   },
   methods: {
     selectAdress () {
-      //
+      this.$router.push({
+        name: 'AdressList'
+      })
     },
     addAdress () {
       //
