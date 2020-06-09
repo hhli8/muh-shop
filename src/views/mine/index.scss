@@ -2,6 +2,15 @@
     min-height: 100vh;
     padding-bottom: 80px;
     box-sizing: border-box;
+    .box {
+        position: fixed;
+        width: 80%;
+        background: #fff;
+        border: 1px solid #333;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
     .container {
         .head {
             &-bg {

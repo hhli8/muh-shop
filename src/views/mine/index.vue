@@ -1,5 +1,10 @@
 <template>
   <div class="page-mine">
+    <div class="box">
+      ppppppppp<br /><br /><br /><br /><br /><br /><br />
+      {{x}}
+      <input type="text" placeholder="请输入" @focus="onFocus"/>
+    </div>
     <div class="container">
       <!--mine
       <div>
@@ -64,8 +69,15 @@ export default {
       ],
       manage: [
         { name: '地址管理', icon: '&#xe60b;', page: 'AdressList' }
-      ]
+      ],
+      scHeight: '',
+      x: '88'
     }
+  },
+  mounted () {
+    console.log(document.body.clientHeight, window.innerHeight)
+    this.scHeight = window.innerHeight
+    this.x = document.body.clientHeight + ' :' + window.innerHeight
   },
   methods: {
     jumpUrl (item) {
@@ -77,6 +89,9 @@ export default {
       this.$router.push({
         name: 'OrderList'
       })
+    },
+    onFocus () {
+      this.x = document.body.clientHeight + ' :' + window.innerHeight // window.innerHeight - this.scHeight
     }
   }
 }
